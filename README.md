@@ -1,21 +1,22 @@
 redactor-js
 ===========
 
-jQuery based WYSIWYG-editor
+jQuery based WYSIWYG-editor    
+Forked from [redactor-js](https://github.com/dybskiy/redactor-js)
 
 ## Installation
 
 You may install this package using Component, Composer, Bower or npm:
-- Component: `component install mervick/redactor-js`
-- Composer: `composer require mervick/redactor-js`
-- Bower: `bower install mervick-redactor-js --save`
-- npm: `npm install mervick-redactor-js --save`
+- Component: `component install mervick/redactor-js-mit`
+- Composer: `composer require mervick/redactor-js-mit`
+- Bower: `bower install redactor-js-mit --save`
+- npm: `npm install redactor-js-mit --save`
 
 ## Usage
 See `index.html` on the root dir of project.
 
 ## Screenshot
-![Redactor in action](https://github.com/dybskiy/redactor-js/raw/master/redactor-js.png)
+![Redactor in action](https://github.com/mervick/redactor-js-mit/raw/master/redactor-js.png)
 
 ## Authors
 
@@ -24,6 +25,7 @@ Official author's website: http://redactorjs.com/
 #### Developers
 
 * Aleksey Baranov and Imperavi LLC. imperavi.com
+* Andrey Izman <izmanw@gmail.com>
 
 #### Optimization and improvement
 
@@ -43,6 +45,5 @@ Official author's website: http://redactorjs.com/
 * German — Volodymyr Atapin
 
 ## License
-Starting with version 7.6.2 redactor-js is licensed under [Creative Commons Attribution-NonCommercial 3.0 license](http://creativecommons.org/licenses/by-nc/3.0/)
 
-For commercial use please buy license here: http://redactorjs.com/ or use earlier version.
+`redactor-js-mit` is licensed under the MIT license.
