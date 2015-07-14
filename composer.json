@@ -1,8 +1,11 @@
 {
-    "name": "mervick/redactor-js",
+    "name": "mervick/redactor-js-mit",
     "version": "1.0.0",
     "description": "WYSIWYG-editor",
     "authors": [
+        {
+            "name": "Aleksey Baranov"
+        },
         {
             "name": "Andrey Izman",
             "email": "izmanw@gmail.com"
@@ -14,7 +17,7 @@
     ],
     "license": "CC-BY-NC-3.0",
     "support": {
-        "source": "http://github.com/mervick/redactor-js"
+        "source": "http://github.com/mervick/redactor-js-mit"
     },
-    "homepage": "http://github.com/mervick/redactor-js"
+    "homepage": "http://github.com/mervick/redactor-js-mit"
 }
