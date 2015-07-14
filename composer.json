@@ -1,0 +1,20 @@
+{
+    "name": "mervick/redactor-js",
+    "version": "1.0.0",
+    "description": "WYSIWYG-editor",
+    "authors": [
+        {
+            "name": "Andrey Izman",
+            "email": "izmanw@gmail.com"
+        }
+    ],
+    "keywords": [
+        "WYSIWYG",
+        "editor"
+    ],
+    "license": "CC-BY-NC-3.0",
+    "support": {
+        "source": "http://github.com/mervick/redactor-js"
+    },
+    "homepage": "http://github.com/mervick/redactor-js"
+}
