@@ -1,19 +1,25 @@
 redactor-js
 ===========
 
-# Repo not maintained. Proceed with caution or refer to http://imperavi.com/redactor/
-##Happy to transfer ownership if you want to maintain a fork.
+jQuery based WYSIWYG-editor
 
-jQuery based WYSIWYG-editor, official author's website: http://redactorjs.com/
+## Installation
 
-This is a codebase mirror hosted here for your, my dear Githubbers', convenience.
+You may install this package using Component, Composer, Bower or npm:
+- Component: `component install mervick/redactor-js`
+- Composer: `composer require mervick/redactor-js`
+- Bower: `bower install mervick-redactor-js --save`
+- npm: `npm install mervick-redactor-js --save`
 
-If you found and issue, please submit it here: http://imperavi.com/support/
+## Usage
+See `index.html` on the root dir of project.
 
 ## Screenshot
 ![Redactor in action](https://github.com/dybskiy/redactor-js/raw/master/redactor-js.png)
 
 ## Authors
+
+Official author's website: http://redactorjs.com/
 
 #### Developers
 
@@ -23,6 +29,10 @@ If you found and issue, please submit it here: http://imperavi.com/support/
 
 * Сергей Демчук sergiusd.ru
 * Павел Ясинский
+
+#### Maintainer
+
+* Andrey Izman <izmanw@gmail.com>
 
 ####Localization
 
