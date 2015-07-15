@@ -1,0 +1,131 @@
+@import "compass/css3";
+@import "variables";
+
+.#{$redactor-toolbar} {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    background: #fff;
+    border: none;
+    @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+    z-index: 100;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    &.#{$redactor-toolbar-overflow} {
+        overflow-y: auto;
+        height: 29px;
+        white-space: nowrap;
+    }
+    &.#{$redactor-toolbar-external} {
+        z-index: 999;
+        @include box-shadow(none);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    li {
+        vertical-align: top;
+        display: inline-block;
+        margin: 0 !important;
+        padding: 0 !important;
+        outline: none;
+        list-style: none !important;
+        @include box-sizing(content-box);
+        a {
+            display: block;
+            color: #333;
+            text-align: center;
+            padding: 9px 10px;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            zoom: 1;
+            @include box-sizing(content-box);
+            &:hover {
+                outline: none;
+                background-color: #1f78d8;
+                color: #fff;
+                i:before {
+                    color: #fff;
+                }
+            }
+            &:active, &.#{$redactor-act} {
+                outline: none;
+                background-color: #ccc;
+                color: #444;
+            }
+            &.#{$redactor-btn-image} {
+                width: 14px;
+                height: 14px;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+            &.#{$fa-redactor-btn} {
+                display: inline-block;
+                padding: 9px 10px 8px 10px;
+                line-height: 1;
+            }
+            &.#{$redactor-button-disabled} {
+                @include opacity(0.3);
+                &:hover {
+                    color: #333;
+                    outline: none;
+                    background-color: transparent !important;
+                    cursor: default;
+                }
+            }
+            &.#{$redactor-button-focus} {
+                color: #fff;
+                background: #000;
+            }
+        }
+    }
+}
+
+.#{$toolbar-fixed-box} + .#{$redactor-editor} {
+    padding-top: 32px !important;
+}
+
+.#{$redactor-toolbar-tooltip} {
+    position: absolute;
+    z-index: 1054;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 5px 8px;
+    line-height: 1;
+    font-family: $font-family;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+.#{$redactor-link-tooltip} {
+    position: absolute;
+    z-index: 99;
+    padding: 10px;
+    line-height: 1;
+    display: inline-block;
+    background-color: #000;
+    color: #555 !important;
+    font-size: 12px;
+    font-family: $font-family;
+    a {
+        font-size: 12px;
+        font-family: $font-family;
+        color: #ccc;
+        margin: 0 5px;
+        text-decoration: none;
+        &:hover {
+            color: #fff;
+        }
+    }
+}

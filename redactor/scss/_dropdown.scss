@@ -1,0 +1,86 @@
+@import "compass/css3";
+@import "variables";
+
+
+.#{$redactor-dropdown} {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    padding: 0;
+    min-width: 220px;
+    max-height: 254px;
+    overflow: auto;
+    background-color: #fff;
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+    font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif !important;
+    line-height: 1.6em;
+    z-index: 1052;
+    a {
+        display: block;
+        padding: 10px 15px;
+        color: #000;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+
+        &:last-child {
+            border-bottom: none;
+        }
+        &:hover {
+            background-color: #1f78d8;
+            color: #fff !important;
+            text-decoration: none;
+        }
+        &.selected {
+            background-color: #000;
+            color: #fff;
+        }
+        &.#{$redactor-dropdown-link-inactive} {
+            &, &:hover {
+                background: none;
+                cursor: default;
+                color: #000 !important;
+                filter: alpha(opacity=40);
+                -moz-opacity: 0.4;
+                opacity: 0.4;
+            }
+        }
+        &.#{$redactor-dropdown-link-selected} {
+            color: #fff;
+            background: #000;
+        }
+    }
+
+    .#{$redactor-formatting-blockquote} {
+        color: rgba(0, 0, 0, 0.4);
+        font-style: italic;
+    }
+    .#{$redactor-formatting-pre} {
+        font-family: monospace, sans-serif;
+    }
+    .#{$redactor-formatting-h1} {
+        font-size: 36px;
+        line-height: 36px;
+        font-weight: bold;
+    }
+    .#{$redactor-formatting-h2} {
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: bold;
+    }
+    .#{$redactor-formatting-h3} {
+        font-size: 21px;
+        line-height: 30px;
+        font-weight: bold;
+    }
+    .#{$redactor-formatting-h4} {
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: bold;
+    }
+    .#{$redactor-formatting-h5} {
+        font-size: 16px;
+        line-height: 23px;
+        font-weight: bold;
+    }
+}

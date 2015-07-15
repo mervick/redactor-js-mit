@@ -1,0 +1,219 @@
+@import "compass/css3";
+@import "variables";
+
+##{$redactor-modal-overlay},
+##{$redactor-modal-box},
+##{$redactor-modal} {
+    z-index: 1053;
+}
+
+##{$redactor-modal-overlay} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    background-color: #000 !important;
+    @include opacity(0.3);
+}
+
+##{$redactor-modal-box} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+##{$redactor-modal} {
+    outline: 0;
+    position: relative;
+    margin: auto auto 20px;
+    padding: 0;
+    background: #fff;
+    color: #000;
+    font-size: 14px !important;
+    font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif !important;
+    @include box-shadow(0 1px 70px rgba(0, 0, 0, 0.5));
+
+    header {
+        padding: 30px 40px 5px 40px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    section {
+        padding: 30px 40px 50px 40px;
+    }
+
+    label {
+        display: block;
+        float: none !important;
+        margin: 15px 0 3px 0 !important;
+        padding: 0;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        position: relative;
+        top: -1px;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    textarea {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        padding: 5px 4px;
+        height: 28px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        color: #333;
+        width: 100%;
+        font-size: 14px;
+        font-family: $font-family;
+        @include border-radius(1px);
+        @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.2) inset);
+        @include transition(border 0.3s ease-in);
+        &:focus {
+            outline: none;
+            border-color: #5ca9e4;
+            @include box-shadow(0 0 0 2px rgba(70, 161, 231, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2) inset);
+        }
+        &.#{$redactor-input-error} {
+            border-color: #e82f2f;
+            @include box-shadow(0 0 0 2px rgba(232, 47, 47, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2) inset);
+        }
+    }
+
+    textarea {
+        display: block;
+        margin-top: 4px;
+        line-height: 1.4em;
+    }
+
+    ##{$redactor-modal-list} {
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+        max-height: 250px;
+        overflow-x: auto;
+
+        li {
+            border-bottom: 1px solid #ddd;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        a {
+            padding: 10px 5px;
+            color: #000;
+            text-decoration: none;
+            font-size: 13px;
+            display: block;
+            position: relative;
+            &:hover {
+                background-color: #eee;
+            }
+        }
+    }
+
+    footer {
+        button {
+            position: relative;
+            width: 100%;
+            padding: 14px 16px;
+            margin: 0;
+            outline: none;
+            border: none;
+            background-image: none;
+            background-color: #ddd;
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            font-weight: normal;
+            font-size: 12px;
+            font-family: $font-family;
+            line-height: 1;
+            cursor: pointer;
+            &:hover {
+                color: #777;
+                background-color: #bbb;
+                text-decoration: none;
+            }
+            &.#{$redactor-modal-delete-btn} {
+                color: #fff;
+                background-color: #b52525;
+                &:hover {
+                    color: rgba(255, 255, 255, 0.6);
+                    background-color: #881b1b;
+                }
+            }
+            &.#{$redactor-modal-action-btn} {
+                color: #fff;
+                background-color: #2461b5;
+                &:hover {
+                    color: rgba(255, 255, 255, 0.6);
+                    background-color: #1a4580;
+                }
+            }
+        }
+    }
+}
+
+##{$redactor-modal-close} {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    text-align: right;
+    color: #bbb;
+    font-size: 30px;
+    font-weight: 300;
+    cursor: pointer;
+    -webkit-appearance: none;
+    padding: 0;
+    border: 0;
+    background: 0;
+    outline: none;
+    &:hover {
+        color: #000;
+    }
+}
+
+##{$redactor-modal-tabber} {
+    margin-bottom: 15px;
+    font-size: 12px;
+    a {
+        border: 1px solid #ddd;
+        line-height: 1;
+        padding: 8px 15px;
+        margin-right: -1px;
+        text-decoration: none;
+        color: #000;
+        &:hover {
+            background-color: #1f78d8;
+            border-color: #1f78d8;
+            color: #fff;
+        }
+        &.active {
+            cursor: default;
+            background-color: #ddd;
+            border-color: #ddd;
+            color: rgba(0, 0, 0, 0.6);
+        }
+    }
+}
