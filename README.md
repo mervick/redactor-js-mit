@@ -36,14 +36,6 @@ Official author's website: http://redactorjs.com/
 
 * Andrey Izman <izmanw@gmail.com>
 
-####Localization
-
-* Brazilian portuguese — Guilherme Gondim
-* Ukrainian — Ганич Тарас alexa-cms.com
-* Polish — Юрий Сладковский its.sladkowski.com
-* Latvian — Максим Солдатёнок maksold.com
-* German — Volodymyr Atapin
-
 ## License
 
 `redactor-js-mit` is licensed under the MIT license.
