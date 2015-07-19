@@ -1,0 +1,141 @@
+@import "compass/css3";
+@import "variables";
+@import "redactor.css";
+
+
+.#{$redactor-editor} {
+    min-height: 200px;
+}
+ul.#{$redactor-toolbar} {
+    padding: 0!important;
+}
+
+.#{$redactor-toolbar} li {
+    padding: 0 !important;
+}
+
+.#{$redactor-toolbar} li.#{$redactor_separator},
+.#{$redactor-box} .#{$redactor-toolbar} li.#{$redactor_separator} {
+    margin: 0 !important;
+    border: 0 !important;
+}
+
+.#{$redactor-toolbar} li a {
+    margin: 0;
+    width: 34px;
+    height: 32px;
+    background-image: none!important;
+    @include box-sizing(border-box);
+    padding: 2px 3px!important;;
+    &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background-image: url(../../img/toolbars.png);
+        background-repeat: no-repeat;
+    }
+}
+
+
+.#{$redactor-toolbar} li a:hover {
+    border-color: transparent!important;
+    background-color: #1f78d8;
+}
+
+.#{$redactor-toolbar} li a:active,
+.#{$redactor-toolbar} li a.#{$redactor-act} {
+    border-color: transparent!important;
+    background-color: #ccc!important;
+}
+
+
+@mixin next_btn($i) {
+    &:hover {
+        &:after { background-position: #{$i}px bottom; }
+    }
+    &, &:active, &.#{$redactor-act} {
+        &:after { background-position: #{$i}px top; }
+    }
+}
+
+body {
+    .#{$redactor-toolbar} li a { $i: 0;
+        &.redactor_btn_html             { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_formatting       { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_bold             { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_italic           { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_unorderedlist    { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_orderedlist      { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_outdent          { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_indent           { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_image            { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_video            { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_file             { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_table            { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_link             { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_fontcolor        { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_backcolor        { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_alignleft        { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_aligncenter      { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_alignright       { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_justify          { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_horizontalrule   { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_deleted          { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_underline        { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_fullscreen       { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_normalscreen     { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_clips            { @include next_btn($i); } $i: $i - 25;
+        &.redactor_btn_alignment        { @include next_btn($i); } // -625
+    }
+}
+
+.#{$redactor-dropdown} {
+    padding: 0!important;
+    max-height: 254px;
+    overflow: auto;
+    a {
+        display: block;
+        background-color: #fff;
+        padding: 10px 15px;
+        color: #000;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+        &:hover {
+            background-color: #1f78d8;
+            color: #fff !important;
+            text-decoration: none;
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+        &.#{$redactor_color_link} {
+            //margin: 5px -5px -5px 4px;
+            margin: 6px -2px -2px 5px;
+            padding: 0 !important;
+            width: 15px !important;
+            height: 15px !important;
+            border: 0px solid #fff !important;
+            &:last-child {
+                &:after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+            }
+        }
+        &.#{$redactor_color_none} {
+            float: left;
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 6px;
+            border-top: 1px solid rgba(0, 0, 0, 0.07);
+            padding: 5px 15px;
+        }
+        &.#{$redactor_separator_drop} {
+            border: none!important;
+        }
+    }
+}
