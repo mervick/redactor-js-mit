@@ -110,7 +110,7 @@ var RLANG = {
 		this.$el = $(element);
 
 		// Lang
-		if (typeof options !== 'undefined' && typeof options.lang !== 'undefined' && options.lang !== 'en' && typeof RELANG[options.lang] !== 'undefined')
+		if (typeof options !== 'undefined' && typeof options.lang !== 'undefined' && options.lang !== 'en' && options.lang !== 'en-US' && typeof RELANG[options.lang] !== 'undefined')
 		{
 			RLANG = RELANG[options.lang];
 		}
