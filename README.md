@@ -1,5 +1,6 @@
 redactor-js
 ===========
+[![Analytics](https://ga-beacon.appspot.com/UA-65295275-1/redactor-js-mit)](https://github.com/igrigorik/ga-beacon)
 
 jQuery based WYSIWYG-editor    
 Forked from [redactor-js](https://github.com/dybskiy/redactor-js)
