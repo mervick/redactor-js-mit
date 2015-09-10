@@ -182,9 +182,8 @@ var RLANG = {
 
 			buttonsCustom: {},
 			buttonsAdd: [],
-			buttons: ['html', '|', 'formatting', '|', 'bold', 'italic', 'deleted', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|',
-					'image', 'video', 'file', 'table', 'link', '|',
-					'fontcolor', 'backcolor', '|', 'alignment', '|', 'horizontalrule'], // 'underline', 'alignleft', 'aligncenter', 'alignright', 'justify'
+			buttons: ['html', '|', 'formatting', '|', 'bold', 'italic', 'underline', 'deleted', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|',
+					'image', 'video', 'file', 'table', 'link', '|', 'alignment', '|', 'horizontalrule'], // 'underline', 'alignleft', 'aligncenter', 'alignright', 'justify'
 
 			airButtons: ['formatting', '|', 'bold', 'italic', 'deleted', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|', 'fontcolor', 'backcolor'],
 
@@ -696,6 +695,10 @@ var RLANG = {
 					this.$editor.click(observeFormatting).keyup(observeFormatting);
 				}
 
+				this.$editor.bind("blur", $.proxy(function() {
+					this.$editor.html($.trim(this.getCode()));
+				}, this));
+
 				// paste
 				var oldsafari = false;
 				if (this.browser('webkit') && navigator.userAgent.indexOf('Chrome') === -1)
@@ -1188,10 +1191,13 @@ var RLANG = {
 				html = this.$el.val();
 			}
 
-			return this.stripTags(html);
+			return this.stripTags(html).replace(/^(<p><\/p>)+/g, '')
+				.replace(/<span style="[^(color|background\-color)][^>]+>([^<]*)<\/span>/g, '$1')
+				.replace(/<\/p>([^<]+)</, '<\/p><p>$1<\/p><');
 		},
 		insertHtml: function(html)
 		{
+
 			this.$editor.focus();
 			this.pasteHtmlAtCaret(html);
 			this.observeImages();
